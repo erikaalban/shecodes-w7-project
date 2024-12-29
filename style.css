@@ -1,0 +1,12 @@
+body {
+  background-color: rgba(0, 106, 255, 0.3);
+}
+
+.body {
+  background: white;
+  max-width: 60%;
+  display: block;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 4px;
+}
