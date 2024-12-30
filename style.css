@@ -31,8 +31,12 @@ body {
 }
 
 header {
-  border-bottom: 1px solid rgba(0, 106, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 106, 255, 0.1);
   padding: 0 0 30px 0;
+}
+
+main {
+  padding: 30px 0;
 }
 
 .weather-details {
@@ -40,7 +44,19 @@ header {
   justify-content: space-between;
 }
 
-.location-details {
+.city-name {
+  font-size: 40px;
+  margin: 0;
+}
+
+.city-details {
+  color: rgba(0, 0, 0, 0.4);
+  margin: 30px 0 0 0;
+}
+
+.details-strong {
+  color: rgba(0, 106, 255, 0.95);
+  font-weight: bold;
 }
 
 .temperature {
@@ -65,8 +81,9 @@ header {
 }
 
 footer {
-  margin-top: 20px;
+  border-top: 1px solid rgba(0, 106, 255, 0.1);
+  padding: 30px 0 0 0;
   font-size: 13px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
 }
