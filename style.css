@@ -28,3 +28,15 @@ body {
   color: white;
   border-color: rgba(0, 106, 255, 0.95);
 }
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.location-temperature {
+  font-size: 60px;
+  font-weight: bold;
+  margin: auto 0;
+}
