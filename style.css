@@ -2,9 +2,9 @@ body {
   background-color: rgba(0, 106, 255, 0.3);
 }
 
-.body {
+.jonathan {
   background: white;
-  max-width: 60%;
+  max-width: 600px;
   display: block;
   margin: 5% auto;
   padding: 30px;
