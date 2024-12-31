@@ -9,7 +9,7 @@ function cityDetails(response) {
 }
 
 function searchCity(city) {
-  let apiKey = `9b7bac1cbc64o0da36fd874214ect64b`;
+  let apiKey = `${API_KEY}`;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(cityDetails);
 }
