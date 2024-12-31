@@ -3,25 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="jonathan">
       <header>
-        <form>
+        <form id="city-search">
           <input
             type="text"
             placeholder="Enter a city"
             required
             class="location-input"
+            id="city-input"
           />
           <input type="submit" value="Submit" class="submit-button" />
         </form>
       </header>
       <main class="weather-details">
         <div>
-          <h1 class="city-name">Paris</h1>
+          <h1 class="city-name" id="city-display">Paris</h1>
           <p class="city-details">
             Tuesday 14:30, scattered clouds
             <br />
@@ -46,5 +48,6 @@
         <a href="https://netlify.com" target="_blank">Netlify</a>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
