@@ -25,14 +25,20 @@
         <div>
           <h1 class="city-name" id="city-display">Paris</h1>
           <p class="city-details">
-            Tuesday 14:30, scattered clouds
+            <span id="time">Tuesday 14:30, </span
+            ><span id="weather-specifics">scattered clouds</span>
             <br />
-            Humidity: <span class="details-strong">66%</span>, Wind:
-            <span class="details-strong">3.13km/hr</span>
+            Humidity: <span class="details-strong" id="humidity">66%</span>,
+            Wind:
+            <span class="details-strong" id="wind">3.13km/hr</span>
           </p>
         </div>
         <div class="temperature">
-          <div class="weather-icon">☀️</div>
+          <div class="weather-icon" id="icon">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+            />
+          </div>
           <div class="location-temperature" id="location-temperature">12</div>
           <div class="temperature-metric">°C</div>
         </div>
