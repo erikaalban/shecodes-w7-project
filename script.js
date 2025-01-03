@@ -9,8 +9,6 @@ function cityDetails(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
 
-  console.log(response.data);
-
   tempElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   weatherElement.innerHTML = response.data.condition.description;
@@ -62,24 +60,32 @@ function getForecast(city) {
   axios(apiUrl).then(displayForecast);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[date.getDate()];
+}
+
 function displayForecast(response) {
   console.log(response.data);
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
-  <div class="day-1">
-    <div class="day-of-week">${day}</div> 
-    <div class="day-icon">☀️</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
+  <div>
+    <div class="day-of-week">${formatDay(day.time)}</div> 
+    <div class="day-icon"><img src="${day.condition.icon_url}" /></div>
     <div class="day-temperature">
-      <div class="high-temp">15°</div>
-      <div class="low-temp">9°</div>
+      <div class="high-temp">${Math.round(day.temperature.maximum)}°</div>
+      <div class="low-temp">${Math.round(day.temperature.minimum)}°</div>
     </div>
   </div>
   `;
+    }
   });
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
