@@ -18,6 +18,8 @@ function cityDetails(response) {
   windElement.innerHTML = `${response.data.wind.speed}km/hr`;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src=${response.data.condition.icon_url} />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -54,7 +56,14 @@ function handleSearchSubmit(event) {
   searchCity(city);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = `9b7bac1cbc64o0da36fd874214ect64b`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHtml = "";
 
@@ -80,4 +89,3 @@ let searchValue = document.querySelector("#city-search");
 searchValue.addEventListener("submit", handleSearchSubmit);
 
 searchCity("paris");
-displayForecast();
