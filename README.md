@@ -1,4 +1,4 @@
-# Weather App
+# weather-app
 
 ## Overview
 This is a simple weather application built using JavaScript. The app allows users to search for a city and view its current weather conditions, including temperature, humidity, wind speed, and a five-day forecast. The project was created as part of the SheCodes Plus course.
